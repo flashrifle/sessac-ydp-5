@@ -1,0 +1,34 @@
+/* 하위 선택자 : 공백 */
+body section {
+    /* 경계선: 두께 선스타일 선색상 */
+    border: 1px solid blue;
+}
+
+body section h2 {
+    border: 1px solid green; 
+}
+
+/* 자식 선택자 : > */
+.first > h2 {
+    color: white;
+    background-color: navy;
+}
+
+.second > h2 {
+    color: navy;
+    background-color: white;
+}
+
+/* 인접 형제 선택자 : + */
+#kong + li {
+    background-color: aqua;
+}
+
+/* 일반 형제 선택자 : ~ */
+#kong ~ li {
+    color: red;
+    color: rgb(00,255,00);
+    color: rgb(00,00,255);
+}
+
+/* css 색상 */
