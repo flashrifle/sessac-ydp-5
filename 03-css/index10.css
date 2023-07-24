@@ -1,0 +1,51 @@
+.d-inline1 {
+    display: inline;
+    background-color: red;
+}
+
+.d-inline2 {
+    display: inline;
+    background-color: blue;
+}
+
+.d-block1 {
+    display: block;
+    background-color: red;
+    width: 500px;
+}
+
+.d-block2 {
+    display: block;
+    background-color: blue;
+    width: 500px;
+}
+
+.d-inline-block1 {
+    display: inline-block;
+    background-color: red;
+    width: 200px;
+    height: 300px;
+    /* margin: 20px */
+    /* CSS 단축 프로퍼티로 상 우 하 좌 순으로 설정 가능 */
+    margin: 20px 40px 20px 40px;
+}
+
+.d-inline-block2 {
+    display: inline-block;
+    background-color: blue;
+}
+
+.d-none {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+.box {
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    /* visibility: hidden; */
+    visibility: visible;
+}
