@@ -70,7 +70,7 @@ for (let i = 0; i < 100; i++) {
 // //실습1
 // let sum2 = 0;
 // for (let i = 1; i <= 100; i++) {
-//   if (i % 5 == 0 || i % 2 == 0) {
+//   if (i % 5 === 0 || i % 2 === 0) {
 //     sum += i;
 //     console.log(sum, i);
 //   }
