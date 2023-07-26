@@ -100,7 +100,7 @@ function myHello() {
 //함수 표현식
 // - 호이스팅의 대상이 될 수 없다
 // - 함수 선언부보다 호출부가 먼저 나올 수 없음
-myHello2();
+// myHello2();
 const myHello2 = function () {
   console.log('hello ~~2');
 };
