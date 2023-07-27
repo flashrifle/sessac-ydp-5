@@ -67,7 +67,7 @@ for (let i = 0; i < 100; i++) {
 //   }
 // }
 
-// //실습1
+//실습1
 // let sum2 = 0;
 // for (let i = 1; i <= 100; i++) {
 //   if (i % 5 === 0 || i % 2 === 0) {
@@ -76,7 +76,21 @@ for (let i = 0; i < 100; i++) {
 //   }
 // }
 
-// //실습3
+// 실습2
+// for (let i = 0; i <= 10000; i++) {
+//   if (i % 13 == 0 && i % 2 == 1) {
+//     console.log(i);
+//   }
+// }
+
+// let number = Number(prompt('숫자를 입력하세요'));
+// for (let i = 0; i <= number; i++) {
+//   if (i % 13 == 0 && i % 2 == 1) {
+//     console.log(i);
+//   }
+// }
+
+//실습3
 // for (x = 2; x < 10; x++) {
 //   console.log(x + '단');
 //   for (y = 1; y < 10; y++) {
