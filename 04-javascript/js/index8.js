@@ -87,3 +87,92 @@ console.log(arr2.join('-'));
 console.log('hello'.split(''));
 console.log('hello'.split('').reverse());
 console.log('hello'.split('').reverse().join);
+
+///////////////////////////////////////////////////
+// 배열에서 반복문 사용하기!
+// - 기본 for 문
+// - for of 문
+// - forEach() 메서드
+
+const arr3 = [1, 2, 5, 6, 7];
+const alphabets = ['a', 'b', 'c', 'd'];
+
+for (let a = 0; a < arr3.length; a++) {
+  console.log(arr3[a]);
+}
+
+for (let alpha of alphabets) {
+  console.log(alpha);
+}
+
+alphabets.forEach(function (alpha) {
+  // alpha: currentValue를 의미. 반복하고 있는 현재 요소
+  console.log(alpha);
+});
+
+alphabets.forEach(function (alpha, idx) {
+  // alpha: currentValue를 의미. 반복하고 있는 현재 요소
+  // idx: currentValue의 인덱스(위치)
+  console.log(alpha, idx);
+});
+
+alphabets.forEach(function (alpha, idx, arr) {
+  // alpha: currentValue를 의미. 반복하고 있는 현재 요소
+  // idx: currentValue의 인덱스(위치)
+  // arr: forEach를 호출한 배열
+  console.log(alpha, idx, arr);
+});
+
+let numbers = [1, 2, 3, 4, 5];
+let sum1 = 0;
+let sum2 = 0;
+let sum3 = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+  sum1 = sum1 + numbers[i];
+}
+
+console.log(sum1);
+
+for (let num of numbers) {
+  sum2 = sum2 + num;
+}
+
+console.log(sum2);
+
+numbers.forEach((num) => {
+  sum3 = sum3 + num;
+});
+
+console.log(sum3);
+
+// map, filter, find 메서드
+
+const arr4 = [1, 2, 3, 4, 5];
+let map_result = arr4.map(function (a) {
+  return a + 2;
+});
+console.log(map_result);
+
+let filter_result = arr4.filter(function (a) {
+  return a < 3;
+});
+
+// 퀴즈
+const words = ['dog', 'cat', 'rabbit', 'apple', 'wow'];
+
+// 1. 글자 수가 3개 초과인 단어만 필터링
+const result1 = words.filter((word) => word.length > 3);
+console.log(result1);
+
+// 2. 글자에 'a' 문자가 포함되어 있는 단어만 필터링
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i].includes('a') === true) {
+    console.log(words[i]);
+  }
+}
+
+const result2 = words.filter((word) => word.includes('a'));
+console.log(result2);
