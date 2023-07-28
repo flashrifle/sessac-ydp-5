@@ -122,5 +122,4 @@ console.clear();
 // 1~100
 console.log(Math.floor(Math.random() * 101));
 
-let max = 22;
 console.log(parseInt(Math.min(Math.random() * 3) + 20));
