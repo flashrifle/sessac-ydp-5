@@ -168,11 +168,25 @@ console.log(result1);
 
 // 2. 글자에 'a' 문자가 포함되어 있는 단어만 필터링
 
-for (let i = 0; i < words.length; i++) {
-  if (words[i].includes('a') === true) {
-    console.log(words[i]);
-  }
-}
+// for (let i = 0; i < words.length; i++) {
+//   if (words[i].includes('a') === true) {
+//     console.log(words[i]);
+//   }
+// }
 
-const result2 = words.filter((word) => word.includes('a'));
-console.log(result2);
+// 1.
+// const result2 = words.filter((word) => word.includes('a'));
+// 2.
+// const result2 = words.filter(function (word) {
+//   return word.includes('a');
+// });
+// console.log(result2);
+
+///////////////////////////
+// for in 반복문
+const me = { name: 'jaemin', gender: 'm', hobby: 'health' };
+for (let key in me) {
+  console.log(key, me[key]);
+  // key : key
+  // value : me[key]
+}
