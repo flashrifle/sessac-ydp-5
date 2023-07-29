@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM 방명록</title>
+        <script defer src="/04-javascript-dom/js/dom_ex2.js"></script>
+    </head>
+    <style>
+        label {
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+            font-weight: bold;
+        }
+
+        #content {
+            width: auto;
+        }
+
+        table {
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+    <body>
+        <div id="container">
+            <div class="create">
+                <label for="creater">작성자</label>
+                <input type="text" id="creater" />
+            </div>
+            <div class="content">
+                <label for="content">내용</label>
+                <input type="text" id="content" />
+            </div>
+            <br />
+            <button>작성</button>
+        </div>
+        <br>
+        <table border="1">
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</td>
+            <th class="date">작성일</th>
+            <tr>
+                <!-- <td style="padding-left: 10px;">1</td>
+                <td style="text-align: center;">김강민</td>
+                <td style="padding-left: 10px;">여러분 반가워요</td>
+                <td style="text-align: center;">2022-07-14 15: 3</td> -->
+            </tr>
+        </table>
+    </body>
+</html>
