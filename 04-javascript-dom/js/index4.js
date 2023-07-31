@@ -34,6 +34,8 @@ btn1.addEventListener('mouseout', function () {
 btn2.addEventListener('click', () => {
     const div = document.createElement('div');
     div.style.backgroundColor = 'pink';
+    div.style.color = 'blue';
+    div.style.padding = '10px';
     div.innerHTML = 'HI!!!!!!';
     container.append(div);
 });
