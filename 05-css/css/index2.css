@@ -1,0 +1,15 @@
+.box {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(rgb(206, 206, 206), green, blue);
+}
+
+.my_center {
+    background-color: hotpink;
+    width: 300px;
+}
+
+.my_width {
+    background-color: green;
+}
