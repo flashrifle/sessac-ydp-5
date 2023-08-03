@@ -11,6 +11,12 @@
             crossorigin="anonymous"
         ></script>
         <script defer src="/06-jquery/js/jquery_ex3.js"></script>
+        <style>
+            p {
+                color: black;
+                font-size: 5px;
+            }
+        </style>
     </head>
     <body>
         <div>
@@ -24,15 +30,16 @@
                 <input type="text" class="content" />
             </label>
             <br />
-            <button>작성</button>
+            <button id="btn">작성</button>
         </div>
         <div>
             <table
+                id="table1"
                 border="1"
                 align="center"
                 cellspacing="0"
                 cellpadding="10"
-                bordercolor="white"
+                borderColor="white"
             >
                 <caption>
                     <h3 style="color: green">2023년 7월</h3>
