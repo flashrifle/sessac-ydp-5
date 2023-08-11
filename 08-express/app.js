@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const PORT = 8000;
 
-// express 템플릿 엔진 종류를(ejs) 등록
-app.set('view engine', 'ejs');
-// 템플릿 엔진 파일을 정할 경로
-app.set('views', './views');
+app.set('view engine', 'ejs'); // express 템플릿 엔진 종류를(ejs) 등록
+
+// app.set('views', './views'); // 템플릿 엔진 파일을 정할 경로
+app.use('/views', express.static(__dirname + '/views')); // static 미들웨어 등록
+
+app.use('/public', express.static(__dirname + '/static')); // static 미들웨어 등록
 
 // app.get(경로, 해당 경로로 들어왔을 때 실행할 함수)
 // '/' 서버주소:포트번호 / (localhost:8000/)
