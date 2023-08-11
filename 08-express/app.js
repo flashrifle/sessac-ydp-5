@@ -9,11 +9,28 @@ app.set('views', './views');
 
 // app.get(경로, 해당 경로로 들어왔을 때 실행할 함수)
 // '/' 서버주소:포트번호 / (localhost:8000/)
+// app.get('/', function (req, res) {
+//     // res.send(x);: x를 클라이언트에게 응답을 보냄
+//     // res.send('hello express');
+//     // res.render(ejs_filename) : ejs 파일 이름을 찾아서 응답
+//     res.render('index');
+// });
+
+// (임시) DB에서 가져온 회원정보 (id, pw)
+const idFromDB = 'banana';
+const pwFromDB = '1234qwer';
+
 app.get('/', function (req, res) {
-    // res.send(x);: x를 클라이언트에게 응답을 보냄
-    // res.send('hello express');
-    // res.render(ejs_filename) : ejs 파일 이름을 찾아서 응답
-    res.render('index');
+    res.render('index', {
+        userId: idFromDB,
+        userPw: pwFromDB,
+        btns: ['버튼1', '버튼2', '버튼3'],
+        me: {
+            name: 'jm',
+            msg: ' ㅎㅇㅎㅇㅎㅇㅎㅇ',
+        },
+        isLogin: false,
+    });
 });
 
 // '/sesac' 경로로 들어왔을 때 "새싹 영등포 캠퍼스 5기 수업중" 메세지 보이기
