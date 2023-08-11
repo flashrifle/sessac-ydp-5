@@ -136,3 +136,125 @@ const [one1, two1, ...rest2] = number;
 console.log(one1);
 console.log(two1);
 console.log(rest2);
+
+console.clear();
+/////////////////////////
+// 클래스
+// : 객체 생성 템플릿 => 객체를 만들기 위해 사용!
+
+// 집이라는 현실 세계의 객체를 만들어보자!
+/* 
+속성: 
+    만들어진 연도(Number)
+    집의 이름(String)
+    창문 갯수(Number)
+메서드:
+    2023 - 만들어진 연도 콘솔창에 출력하는 "건물의 나이 메소드"
+    창문의 갯수 콘솔창에 출력하는 메소드
+*/
+
+class House {
+    // 생성자 함수
+    // : 클래스를 이용해 객체를 생성할 때 마다 속성을 초기화
+    constructor(year, name, window) {
+        this.year = year;
+        this.name = name;
+        this.window = window;
+    }
+
+    // 메서드 1: 집의 나의를 출력
+    getAge() {
+        console.log(`${this.name}는 건축한지 ${2023 - this.year}년 되었어요! `);
+    }
+
+    // 메서드 2: 집의 창문 개수 출력
+    getWindow() {
+        console.log(`${this.name}의 창문은 ${this.window}개 입니다!`);
+    }
+}
+
+const house1 = new House(1990, '롯데캐슬', 1);
+console.log('house1 >>', house1);
+console.log(typeof house1);
+console.log(house1.year);
+house1.getAge();
+house1.getWindow();
+
+const house2 = new House(2007, '자이', 10);
+console.log(house2);
+// 과제1
+class Shape {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    getArea() {
+        return this.x * this.y;
+    }
+}
+let rec1 = new Shape(3, 4);
+console.log(`rec1의 넓이는 : ${rec1.getArea()}`);
+
+// 클래스 상속
+// 부모 클래스: House
+// 자식 클래스 Apartment
+class Apartment extends House {
+    constructor(year, name, window, floor, windowMaker) {
+        // 부모 객체에서 상속 받아옴 = 상속한 부모 클래스의 생성자를 호출
+        super(year, name, window);
+        this.floor = floor;
+        this.windowMaker = windowMaker;
+    }
+
+    getAptInfo() {
+        return `${this.year}에 지어진 ${this.name} 아파트의 
+          총 층수는 ${this.floor} 이며, 창문의 개수는 ${this.window}`;
+    }
+}
+
+// 과제2
+class Rectangle extends Shape {
+    constructor(x, y) {
+        super(x, y);
+    }
+
+    getArea() {
+        return this.x * this.y;
+    }
+
+    getLength() {
+        return Math.sqrt(this.getArea());
+    }
+}
+
+let rec2 = new Rectangle(4, 5);
+console.log(
+    `rec2의 넓이 : ${rec2.getArea()} / rec2의 대각선 길이 ${rec2.getLength()}`
+);
+
+class Triangle extends Shape {
+    constructor(x, y) {
+        super(x, y);
+    }
+    getArea() {
+        return (this.x * this.y) / 2;
+    }
+}
+
+let tri1 = new Triangle(10, 5);
+console.log(`삼각형 tr1의 넓이는 : ${tri1.getArea()}`);
+
+class Circle extends Shape {
+    constructor(x, y, r) {
+        super(x, y);
+        this.r = r;
+    }
+
+    getArea() {
+        return Math.PI * this.r * this.r;
+    }
+}
+
+let cir1 = new Circle(3, 3, 3);
+console.log(`원의 넓이는 : ${cir1.getArea()}`);
