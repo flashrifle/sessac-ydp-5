@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>get으로 정보 받기</h1>
+        <form action="/getForm" method="get">
+            <label for="name"
+                >이름
+                <input type="text" name="name" />
+            </label>
+            <legend>
+                성별
+                <fieldset name="gender">
+                    <input id="man" type="radio" />남자
+                    <input name="woman" type="radio" />여자
+                </fieldset>
+            </legend>
+            <legend>
+                생년월일
+                <fieldset name="birth">
+                    <select name="birth" id="year">
+                        <option>2010</option>
+                    </select>
+                    <span>년</span>
+                    <select name="birth" id="month">
+                        <option>1</option>
+                    </select>
+                    <span>월</span>
+                    <select name="birth" id="day">
+                        <option>1</option>
+                    </select>
+                    <span>일</span>
+                </fieldset>
+            </legend>
+            <legend>
+                관심사
+                <fieldset name="hobby">
+                    <input name="fish" type="checkbox" />낚시
+                    <input name="cook" type="checkbox" />요리
+                    <input name="song" type="checkbox" />노래
+                </fieldset>
+            </legend>
+            <button>회원가입</button>
+        </form>
+    </body>
+</html>
