@@ -14,8 +14,10 @@
     <body>
         <h1><%= title%> 폼 결과 확인하기</h1>
         <div>
-            <div><span><%= userInfo.id %></span>님 환영합니다.</div>
-            <div>비밀번호는 <span><%= userInfo.pw %></span>이군요</div>
+            <div><span><%= userInfo.name %></span>님 환영합니다.</div>
+            <div><span>당신의 <%= userInfo.gender %></span>이군요</div>
+            <div><span>당신의 생년월일은<%= userInfo.birth %></span>이군요</div>
+            <div><span>당신의 관심사는<%= userInfo.hobby %></span>이군요</div>
         </div>
     </body>
 </html>

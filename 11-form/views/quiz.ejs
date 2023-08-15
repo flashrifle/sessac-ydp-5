@@ -15,23 +15,35 @@
             <legend>
                 성별
                 <fieldset name="gender">
-                    <input id="man" type="radio" />남자
-                    <input name="woman" type="radio" />여자
+                    <input name="gender" value="male" type="radio" /><label
+                        for="male"
+                        >남자</label
+                    >
+                    <input name="gender" value="female" type="radio" /><label
+                        for="female"
+                        >여자</label
+                    >
                 </fieldset>
             </legend>
             <legend>
                 생년월일
                 <fieldset name="birth">
                     <select name="birth" id="year">
-                        <option>2010</option>
+                        <% for(let i = 1990; i <= 2023; i++) { %>
+                        <option><%= i %></option>
+                        <% }%>
                     </select>
                     <span>년</span>
                     <select name="birth" id="month">
-                        <option>1</option>
+                        <% for(let i = 1; i <= 12; i++) { %>
+                        <option><%= i %></option>
+                        <% }%>
                     </select>
                     <span>월</span>
                     <select name="birth" id="day">
-                        <option>1</option>
+                        <% for(let i = 1; i <= 31; i++) { %>
+                        <option><%= i %></option>
+                        <% }%>
                     </select>
                     <span>일</span>
                 </fieldset>
@@ -39,9 +51,27 @@
             <legend>
                 관심사
                 <fieldset name="hobby">
-                    <input name="fish" type="checkbox" />낚시
-                    <input name="cook" type="checkbox" />요리
-                    <input name="song" type="checkbox" />노래
+                    <label for="fish">
+                        <input
+                            name="hobby"
+                            value="fish"
+                            type="checkbox"
+                        />낚시</label
+                    >
+                    <label for="cook">
+                        <input
+                            name="hobby"
+                            value="cook"
+                            type="checkbox"
+                        />요리</label
+                    >
+                    <label for="song">
+                        <input
+                            name="hobby"
+                            value="song"
+                            type="checkbox"
+                        />노래</label
+                    >
                 </fieldset>
             </legend>
             <button>회원가입</button>
