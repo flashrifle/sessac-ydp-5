@@ -11,31 +11,59 @@
         <script>
             // 1. 1초 뒤에 body 태그의 색상을 빨간색 변경 (setTimeout)
             let body = document.querySelector('body');
-            function change(cb) {
-                setTimeout(function () {
-                    body.setAttribute('style', 'color:red');
-                }, 1000);
-            }
-            change();
+            // function change(cb) {
+            //     setTimeout(function () {
+            //         body.setAttribute('style', 'color:red');
+            //     }, 1000);
+            // }
+            // change();
             // 2. 1초 뒤에 body 태그의 색상을 빨 -> 1초 뒤 주 -> ... -> 1초 뒤에 파란색
-            function change(cb) {
-                setTimeout(function () {
-                    body.setAttribute('style', 'color:red');
-                    change2();
-                }, 1000);
-                function change2(cb) {
-                    setTimeout(function () {
-                        body.setAttribute('style', 'color:orange');
-                        change3();
+            // function change(cb) {
+            //     setTimeout(function () {
+            //         body.setAttribute('style', 'color:red');
+            //         change2();
+            //     }, 1000);
+            //     function change2(cb) {
+            //         setTimeout(function () {
+            //             body.setAttribute('style', 'color:orange');
+            //             change3();
+            //         }, 1000);
+            //         function change3(cb) {
+            //             setTimeout(function () {
+            //                 body.setAttribute('style', 'color:green');
+            //             }, 1000);
+            //         }
+            //     }
+            // }
+            // change();
+
+            function change() {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        body.setAttribute('style', 'color:red');
+                        resolve();
                     }, 1000);
-                    function change3(cb) {
-                        setTimeout(function () {
-                            body.setAttribute('style', 'color:green');
-                        }, 1000);
-                    }
-                }
+                });
             }
-            change();
+
+            function change2() {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        body.setAttribute('style', 'color:orange');
+                        resolve();
+                    }, 1000);
+                });
+            }
+
+            function change3(cb) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(function () {
+                        body.setAttribute('style', 'color:green');
+                    }, 1000);
+                });
+            }
+
+            change().then(change2).then(change3);
         </script>
     </body>
 </html>
