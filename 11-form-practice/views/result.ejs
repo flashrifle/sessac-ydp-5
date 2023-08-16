@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            span {
+                color: blue;
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><%= title%> 폼 전송 완료</h1>
+        <%if (title == 'GET') {%>
+        <div>
+            <ul>
+                <li>이름 : <%= user.username %></li>
+                <li>성별 : <%= user.gender %></li>
+                <li>
+                    생일 : <%= user.birthYear + '-' + user.birthMonth + '-'
+                    +user.birthDay %>
+                </li>
+                <li>취미 : <%= user.hobby %></li>
+            </ul>
+        </div>
+        <% } else { %>
+        <div>
+            <ul>
+                <li>이름 : <%= user.username %></li>
+                <li>성별 : <%= user.gender %></li>
+                <li>
+                    생일 : <%= user.birthYear + '-' + user.birthMonth + '-'
+                    +user.birthDay %>
+                </li>
+                <li>취미 : <%= user.hobby %></li>
+                <li>색상 : <%= user.myColor %></li>
+                <li>숫자 : <%= user.myNumber %></li>
+            </ul>
+        </div>
+        <% } %>
+        <a href="/">돌아가기</a>
+    </body>
+</html>
