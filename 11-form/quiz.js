@@ -16,7 +16,7 @@ app.use(express.json()); // json 형식으로 데이터를 주고 받는다
 // GET '/' -> index.ejs를 보여줌
 app.get('/', (req, res) => {
     // res.render('뷰경로', 데이터)
-    res.render('index', { title: '폼 전송 연습' });
+    res.render('quiz', { title: '폼 전송 연습' });
 });
 
 app.listen(PORT, () => {
@@ -28,7 +28,7 @@ app.listen(PORT, () => {
 app.get('/getForm', function (req, res) {
     console.log(req.query);
     // res.send('get 요청 성공');
-    res.render('result', {
+    res.render('getResult', {
         title: 'GET',
         userInfo: req.query,
     });
@@ -37,7 +37,7 @@ app.get('/getForm', function (req, res) {
 app.post('/postForm', function (req, res) {
     console.log(req.body);
     // res.send('post 요청 성공');
-    res.render('result', {
+    res.render('postResult', {
         title: 'POST',
         userInfo: req.body,
     });

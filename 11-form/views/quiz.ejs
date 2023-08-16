@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>get으로 정보 받기</h1>
-        <form action="/getForm" method="get">
+        <form action="/postForm" method="post">
             <label for="name"
                 >이름
                 <input type="text" name="name" />
@@ -15,14 +15,18 @@
             <legend>
                 성별
                 <fieldset name="gender">
-                    <input name="gender" value="male" type="radio" /><label
-                        for="male"
-                        >남자</label
-                    >
-                    <input name="gender" value="female" type="radio" /><label
-                        for="female"
-                        >여자</label
-                    >
+                    <input
+                        name="gender"
+                        value="male"
+                        type="radio"
+                        required
+                    /><label for="male">남자</label>
+                    <input
+                        name="gender"
+                        value="female"
+                        type="radio"
+                        required
+                    /><label for="female">여자</label>
                 </fieldset>
             </legend>
             <legend>
@@ -73,6 +77,14 @@
                         />노래</label
                     >
                 </fieldset>
+            </legend>
+            <legend>
+                좋아하는 색
+                <fieldset><input type="color" name="favColor" /></fieldset>
+            </legend>
+            <legend>
+                좋아하는 시간
+                <fieldset><input type="time" name="favTime" /></fieldset>
             </legend>
             <button>회원가입</button>
         </form>
