@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title%></title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <h1>Dynamic Form !!</h1>
+        <span>연결된 PORT는 <%= port%> 입니다.</span>
+        <form name="register">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" value="새싹" />
+            <br />
+            <input type="radio" name="gender" value="m" id="male" checked />
+            <label for="male">남</label>
+            <input type="radio" name="gender" value="f" id="female" />
+            <label for="female">여</label>
+            <br />
+            <button type="button" onClick="ajaxGet();">Ajax Get 제출</button>
+            <button type="button" onClick="ajaxPost();">Ajax Post 제출</button>
+        </form>
+        <!-- 동적폼 전송 결과를 보여줄 곳 -->
+        <div class="result"></div>
+
+        <script>
+            const result = document.querySelector('div.result');
+
+            function ajaxGet() {
+                console.log('ajaxGet 함수 호출');
+
+                // 폼 선택
+                const form = document.forms['register'];
+                console.log(form);
+                // 폼 객체 요소 확인
+                console.dir(form);
+                console.dir(form.name);
+                console.dir(form.name.value); // 이름 input에 입력한 값
+                console.dir(form.gender.value); // 성별 radio input을 선택한 값
+
+                const data = {
+                    name: form.name.value,
+                    gender: form.gender.value,
+                };
+
+                // ajax로 서버에 get요청을 보내기
+                $.ajax({
+                    type: 'get', // 요청의 종류 (= form의 method 속성)
+                    url: '/ajax', // 요청의 경로 (= form의 action 속성)
+                    data: data, // 요청에 실어보낼 데이터 ( 서버가 받게 될 데이터 )
+                    success: function (data) {
+                        console.log(data);
+                        result.textContent = `GET /ajax 요청 완료 ${data.name}님은 ${data.gender} 입니까?`;
+                        result.style.color = 'red';
+                    },
+                });
+            }
+
+            function ajaxPost() {
+                console.log('ajaxPost 함수 호출');
+
+                const form = document.forms['register'];
+                const data = {
+                    name: form.name.value,
+                    gender: form.gender.value,
+                };
+
+                // ajax로 서버에 post요청을 보내기
+                $.ajax({
+                    type: 'post',
+                    url: '/ajax',
+                    data: data,
+                    success: function (data) {
+                        console.log(data);
+                        result.textContent = `POST /ajax 요청 완료 ${data.name}님은 ${data.gender} 입니까?`;
+                        result.style.color = 'blue';
+                    },
+                });
+            }
+        </script>
+    </body>
+</html>
