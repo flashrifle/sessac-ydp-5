@@ -32,6 +32,7 @@ const uploadDetail = multer({
 
 app.set('view engine', 'ejs');
 app.use('/views', express.static(__dirname + '/views'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -39,9 +40,9 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-// app.get('/quiz', (req, res) => {
-//     res.render('quiz');
-// });
+app.get('/quiz', (req, res) => {
+    res.render('quiz');
+});
 
 // 1. single(): 하나의 파일을 업로드
 // upload.single('userfile'): 클라이언트의 요청이 들어오면
@@ -89,6 +90,11 @@ app.post(
         res.send('각각의 인풋에 여러 파일 업로드 완료!');
     }
 );
+
+app.post('/dynamicFile', uploadDetail.single('dynamicUserfile'), (req, res) => {
+    console.log(req.file);
+    res.send(req.file);
+});
 
 app.listen(PORT, function () {
     console.log(`Port ${PORT} is opening!`);
