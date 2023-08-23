@@ -7,15 +7,21 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
-        <h1>GET 폼 실습</h1>
+        <h1>axios get 실습</h1>
         <form name="register">
             <label for="username">이름</label>
-            <input type="text" name="username" id="username" />
+            <input type="text" name="username" id="username" required />
             <br />
 
             <fieldset>
                 <legend>성별</legend>
-                <input type="radio" name="gender" id="male" value="male" />
+                <input
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value="male"
+                    checked
+                />
                 <label for="male">남자</label>
                 <input type="radio" name="gender" id="female" value="female" />
                 <label for="female">여자</label>
@@ -69,11 +75,12 @@
         </form>
         <div class="result"></div>
         <br />
+        <h1>axios post 로그인</h1>
         <form name="login">
             <label for="id">ID</label>
-            <input type="text" name="id" id="id" />
+            <input type="text" name="id" id="id" required />
             <label for="pw">PW</label>
-            <input type="password" name="pw" id="pw" />
+            <input type="password" name="pw" id="pw" required />
             <button type="button" onclick="axiosPost();">로그인</button>
         </form>
         <br />
@@ -98,7 +105,7 @@
                 });
                 console.log('res', res);
                 const { name } = data;
-                if (name !== '') {
+                if (form.username.checkValidity()) {
                     result.textContent = `${name} 님 환영합니다 가입이 완료되었습니다.`;
                 } else {
                     result.textContent = '이름은 필수 값입니다!';
@@ -126,15 +133,16 @@
                     data: data,
                 });
                 const { userId, userPw } = data;
-
+                console.log('post.id', form.id.checkValidity());
                 if (ID === `${userId}` && PW === `${userPw}`) {
                     result2.textContent = `${userId} 님 로그인 성공.`;
                     result2.style.color = 'blue';
-                } else if (ID !== `${userId}` || PW !== `${userPw}`) {
-                    result2.textContent = 'ID PW를 확인하세요';
+                } else if (
+                    !form.id.checkValidity() ||
+                    !form.pw.checkValidity()
+                ) {
+                    result2.textContent = 'ID와 PW는 필수 값입니다.';
                     result2.style.color = 'red';
-                } else if (`${userId}` === '' || `${userPw}` === '') {
-                    result2.textContent = 'ID PW를 입력하세요';
                 }
             } catch (err) {
                 console.log(err);

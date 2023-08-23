@@ -20,9 +20,11 @@ const uploadDetail = multer({
         },
         filename(req, file, done) {
             const ext = path.extname(file.originalname); // 파일 "확장자"를 추출
+            console.log('file', file);
             done(
                 null,
-                path.basename(file.originalname, ext) + Date.now() + ext
+                // console.log('path', path.basename),
+                path.basename(req.body.id, ext) + ext
             );
         },
     }),
@@ -94,6 +96,18 @@ app.post(
 app.post('/dynamicFile', uploadDetail.single('dynamicUserfile'), (req, res) => {
     console.log(req.file);
     res.send(req.file);
+});
+
+app.post('/uploads/quiz', uploadDetail.single('quizFile'), (req, res) => {
+    console.log(req.file);
+    console.log(req.body);
+    res.render('result', {
+        id: req.body.id,
+        pw: req.body.pw,
+        name: req.body.name,
+        age: req.body.age,
+        path: req.file.filename,
+    });
 });
 
 app.listen(PORT, function () {
