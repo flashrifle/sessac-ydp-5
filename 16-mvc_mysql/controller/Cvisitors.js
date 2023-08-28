@@ -5,7 +5,11 @@ exports.main = (req, res) => {
 };
 
 exports.getVisitor = (req, res) => {
-    res.render('visitor', {
-        data: Visitor.getVisitors(),
+    // console.log(Visitor.getVisitors());
+    Visitor.getVisitors((result) => {
+        console.log('Cvisitor.js : ', result);
+        res.render('visitor', {
+            data: result,
+        });
     });
 };
