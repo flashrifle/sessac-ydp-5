@@ -37,3 +37,15 @@ exports.postVisitor = (data, cb) => {
         cb(rows.insertId);
     });
 };
+
+exports.deleteVisitor = (id, cb) => {
+    console.log('model >>', id);
+
+    conn.query(`delete from visitor where id=${id}`, (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        console.log('model >>', rows);
+        cb(true);
+    });
+};

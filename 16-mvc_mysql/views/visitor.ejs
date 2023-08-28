@@ -59,7 +59,12 @@
                         </button>
                     </td>
                     <td>
-                        <button type="button">삭제</button>
+                        <button
+                            type="button"
+                            onClick="deleteVisitor(this, '<%= d.id%>');"
+                        >
+                            삭제
+                        </button>
                     </td>
                 </tr>
                 <% } %>

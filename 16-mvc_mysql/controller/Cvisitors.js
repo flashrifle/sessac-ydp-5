@@ -28,3 +28,13 @@ exports.postVisitor = (req, res) => {
         });
     });
 };
+
+exports.deleteVisitor = (req, res) => {
+    console.log(req.body);
+    const { id } = req.body;
+
+    Visitor.deleteVisitor(id, (result) => {
+        console.log('controller >> ', result);
+        res.send(result);
+    });
+};
