@@ -4,7 +4,7 @@ exports.main = (req, res) => {
     res.render('index');
 };
 
-exports.getVisitor = (req, res) => {
+exports.getVisitors = (req, res) => {
     // console.log(Visitor.getVisitors());
     Visitor.getVisitors((result) => {
         console.log('Cvisitor.js : ', result);
@@ -36,5 +36,22 @@ exports.deleteVisitor = (req, res) => {
     Visitor.deleteVisitor(id, (result) => {
         console.log('controller >> ', result);
         res.send(result);
+    });
+};
+
+exports.getVisitor = (req, res) => {
+    console.log(req.params);
+    const { id } = req.params;
+
+    Visitor.getVisitor(id, (result) => {
+        console.log('controller >> ', result);
+        res.send(result);
+    });
+};
+
+exports.updateVisitor = (req, res) => {
+    console.log(req.body);
+    Visitor.updateVisitor(req.body, () => {
+        res.send({ isUpdated: true });
     });
 };

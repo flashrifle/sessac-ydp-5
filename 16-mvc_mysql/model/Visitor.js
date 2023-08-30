@@ -14,7 +14,7 @@ const conn = mysql.createConnection({
 });
 
 exports.getVisitors = (cb) => {
-    conn.query('SELECT * FROM visitor', (err, rows) => {
+    conn.query('SELECT * FROM visitor order by id desc', (err, rows) => {
         if (err) {
             throw err;
         }
@@ -47,5 +47,29 @@ exports.deleteVisitor = (id, cb) => {
         }
         console.log('model >>', rows);
         cb(true);
+    });
+};
+
+exports.getVisitor = (id, cb) => {
+    console.log('model >>', id);
+
+    conn.query(`select * from visitor where id=${id}`, (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        console.log('model >>', rows);
+        cb(rows[0]); // [{}] -> {}
+    });
+};
+
+exports.updateVisitor = (updateData, cb) => {
+    const { id, name, comment } = updateData;
+    const sql = `update visitor set name='${name}', comment='${comment}' where id=${id}`;
+    conn.query(sql, (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        console.log('model >>', rows);
+        cb();
     });
 };

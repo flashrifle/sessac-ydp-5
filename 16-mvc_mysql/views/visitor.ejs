@@ -54,7 +54,10 @@
                     <td><%= d.name %></td>
                     <td><%= d.comment %></td>
                     <td>
-                        <button type="button" onClick="updateVisitor();">
+                        <button
+                            type="button"
+                            onClick="editVisitor('<%= d.id%>');"
+                        >
                             수정
                         </button>
                     </td>
