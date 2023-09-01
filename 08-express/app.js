@@ -5,7 +5,7 @@ const PORT = 8000;
 app.set('view engine', 'ejs'); // express 템플릿 엔진 종류를(ejs) 등록
 
 // app.set('views', './views'); // 템플릿 엔진 파일을 정할 경로
-app.use('/views', express.static(__dirname + '/views')); // static 미들웨어 등록
+app.set('views', './views'); // static 미들웨어 등록
 
 app.use('/public', express.static(__dirname + '/static')); // static 미들웨어 등록
 
