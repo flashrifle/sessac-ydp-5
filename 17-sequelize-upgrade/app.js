@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 8000;
+const PORT = 8080;
 const router = require('./routes');
 const { sequelize } = require('./models');
 
@@ -11,12 +11,13 @@ app.use(express.json());
 app.use('/', router);
 
 sequelize
-  .sync({ force: false })
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log('Database connection succeeded!')
-      console.log(`http://localhost:${PORT}`);
+    .sync({ force: false })
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log('Database connection succeeded!');
+            console.log(`http://localhost:${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error(error);
     });
-  }).catch((error) => {
-    console.error(error);
-  });;
