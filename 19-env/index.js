@@ -14,5 +14,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`${PORT} conn!`);
+    console.log(`${PORT} ${process.env.NAME} conn!`);
 });

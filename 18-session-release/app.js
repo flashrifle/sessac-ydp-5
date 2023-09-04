@@ -1,7 +1,10 @@
 const express = require('express');
 const session = require('express-session');
+const dotenv = require('dotenv');
+dotenv.config();
+
 const app = express();
-const PORT = 8001;
+const PORT = process.env.PORT;
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -12,7 +15,7 @@ app.use(express.json());
 // TODO: express-session 미들웨어 등록
 app.use(
     session({
-        secret: 'MySessionSecretKey',
+        secret: process.env.SECRET_KEY,
         resave: false,
         saveUninitialized: true,
         cookie: {
