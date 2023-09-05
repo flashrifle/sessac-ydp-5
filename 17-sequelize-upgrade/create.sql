@@ -28,3 +28,15 @@ select * from player;
 select * from profile;
 select * from team;
 
+select * from player where name = '성춘향';
+
+use sesac;
+
+drop table user;
+
+create table user {
+	id int not null primary key auto_increment,
+    pw varchar(255) not null,
+    name varchar(15) not null,
+    userid varchar(15) not null
+};
