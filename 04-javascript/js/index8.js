@@ -211,3 +211,14 @@ for (let key in me) {
 //     return accumulator + currentValue;
 // }, initialValue);
 // console.log(result); //115
+
+//////////////////////
+// concat()
+// : 여러 배열 합치는 방법
+//1.
+const arr_1 = [1, 2, 3];
+const arr_2 = [3, 4, 5];
+console.log(arr_1.concat(arr_2));
+
+//2.
+console.log([...arr_1, ...arr_2]);
