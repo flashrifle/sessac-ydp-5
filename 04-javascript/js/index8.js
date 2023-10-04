@@ -98,29 +98,29 @@ const arr3 = [1, 2, 5, 6, 7];
 const alphabets = ['a', 'b', 'c', 'd'];
 
 for (let a = 0; a < arr3.length; a++) {
-  console.log(arr3[a]);
+    console.log(arr3[a]);
 }
 
 for (let alpha of alphabets) {
-  console.log(alpha);
+    console.log(alpha);
 }
 
 alphabets.forEach(function (alpha) {
-  // alpha: currentValue를 의미. 반복하고 있는 현재 요소
-  console.log(alpha);
+    // alpha: currentValue를 의미. 반복하고 있는 현재 요소
+    console.log(alpha);
 });
 
 alphabets.forEach(function (alpha, idx) {
-  // alpha: currentValue를 의미. 반복하고 있는 현재 요소
-  // idx: currentValue의 인덱스(위치)
-  console.log(alpha, idx);
+    // alpha: currentValue를 의미. 반복하고 있는 현재 요소
+    // idx: currentValue의 인덱스(위치)
+    console.log(alpha, idx);
 });
 
 alphabets.forEach(function (alpha, idx, arr) {
-  // alpha: currentValue를 의미. 반복하고 있는 현재 요소
-  // idx: currentValue의 인덱스(위치)
-  // arr: forEach를 호출한 배열
-  console.log(alpha, idx, arr);
+    // alpha: currentValue를 의미. 반복하고 있는 현재 요소
+    // idx: currentValue의 인덱스(위치)
+    // arr: forEach를 호출한 배열
+    console.log(alpha, idx, arr);
 });
 
 let numbers = [1, 2, 3, 4, 5];
@@ -129,20 +129,20 @@ let sum2 = 0;
 let sum3 = 0;
 
 for (let i = 0; i < numbers.length; i++) {
-  console.log(numbers[i]);
-  sum1 = sum1 + numbers[i];
+    console.log(numbers[i]);
+    sum1 = sum1 + numbers[i];
 }
 
 console.log(sum1);
 
 for (let num of numbers) {
-  sum2 = sum2 + num;
+    sum2 = sum2 + num;
 }
 
 console.log(sum2);
 
 numbers.forEach((num) => {
-  sum3 = sum3 + num;
+    sum3 = sum3 + num;
 });
 
 console.log(sum3);
@@ -151,12 +151,12 @@ console.log(sum3);
 
 const arr4 = [1, 2, 3, 4, 5];
 let map_result = arr4.map(function (a) {
-  return a + 2;
+    return a + 2;
 });
 console.log(map_result);
 
 let filter_result = arr4.filter(function (a) {
-  return a < 3;
+    return a < 3;
 });
 
 // 퀴즈
@@ -186,7 +186,28 @@ console.log(result1);
 // for in 반복문
 const me = { name: 'jaemin', gender: 'm', hobby: 'health' };
 for (let key in me) {
-  console.log(key, me[key]);
-  // key : key
-  // value : me[key]
+    console.log(key, me[key]);
+    // key : key
+    // value : me[key]
 }
+
+////
+// reduce()
+// : 배열의 각 요소에 대해서 주어진 리듀서(reducer)합수를 실행하고, 하나의 결과값 반환
+
+// reduce((acc, cur) => {...}, initValue)
+// - acc : 누적되는 값
+// - cur : 현재 요소
+
+// const numbers2 = [1, 2, 3, 4, 5];
+// const result = numbers2.reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue;
+// });
+// console.log(result); //15
+
+// const numbers2 = [1, 2, 3, 4, 5];
+// const initialValue = 100;
+// const result = numbers2.reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue;
+// }, initialValue);
+// console.log(result); //115
