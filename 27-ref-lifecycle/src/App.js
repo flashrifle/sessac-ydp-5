@@ -1,7 +1,11 @@
+import LifeCycleClass from './LifeCycleClass';
+import LifeCycleFunction from './LifeCycleFunction';
 import RefSample1 from './RefSample1';
 import RefSample2 from './RefSample2';
 import RefSample3 from './RefSample3';
 import RefSample4 from './RefSample4';
+
+import PostList from './ex/PostList';
 
 function App() {
     return (
@@ -20,6 +24,12 @@ function App() {
 
             {/* 클래스형 컴포넌트; ref 사용방법 2.createRef() */}
             <RefSample4 />
+            <hr />
+            <LifeCycleFunction />
+            <hr />
+            <LifeCycleClass />
+            <hr />
+            <PostList />
         </div>
     );
 }
