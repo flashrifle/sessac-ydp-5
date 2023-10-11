@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+
+    .box {
+        border: 1px solid black;
+
+        height: 50px;
+        border-radius: 50px;
+        &.pink {
+            background-color: pink;
+        }
+
+        &.yellow {
+            background-color: yellow;
+        }
+
+        &.green {
+            background-color: green;
+        }
+    }
+}

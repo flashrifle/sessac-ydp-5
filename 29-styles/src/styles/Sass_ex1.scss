@@ -1,0 +1,60 @@
+.container {
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+
+    .div1 {
+        top: 100px;
+        left: 100px;
+        background-color: skyblue;
+        z-index: 10;
+    }
+
+    .div2 {
+        top: 120px;
+        left: 160px;
+        background-color: orange;
+        z-index: 11;
+    }
+
+    .div3 {
+        top: 180px;
+        left: 180px;
+        background-color: yellow;
+        z-index: 12;
+    }
+
+    .div4 {
+        top: 180px;
+        left: 220px;
+        background-color: green;
+        z-index: 13;
+    }
+
+    .div5 {
+        top: 180px;
+        left: 300px;
+        background-color: blue;
+        z-index: 14;
+    }
+
+    .div6 {
+        width: 30px;
+        height: 30px;
+        top: 120px;
+        left: 120px;
+        background-color: white;
+        z-index: 10;
+    }
+
+    .div7 {
+        width: 10px;
+        height: 10px;
+        top: 130px;
+        left: 120px;
+        background-color: black;
+        z-index: 10;
+    }
+}
