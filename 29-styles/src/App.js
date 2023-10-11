@@ -1,5 +1,6 @@
 import CssModuleComponent from './CssModuleComponent';
 import SassComponent from './SassComponent';
+import StyledComponent from './StyledComponent';
 import './styles/App.css';
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
             <hr />
             <h2>SASS</h2>
             <SassComponent />
+            <hr />
+            <h2>StyledComponent</h2>
+            <StyledComponent />
         </div>
     );
 }
