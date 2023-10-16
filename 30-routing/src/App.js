@@ -4,6 +4,7 @@ import NotFound from './pages/NotFound';
 import ProductPage from './pages/ProductPage';
 import Header from './components/Header';
 import ProductDetailPage from './pages/ProductDetailPage';
+import PhotoPage from './pages/PhotoPage';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/products" element={<ProductPage />} />
+                    <Route path="/photos" element={<PhotoPage />} />
                     <Route
                         path="/products/:productId"
                         element={<ProductDetailPage />}
