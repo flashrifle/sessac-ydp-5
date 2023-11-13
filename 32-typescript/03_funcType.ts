@@ -87,6 +87,12 @@ function sum1(a: number, b: number): void {
 }
 sum1(5, 11);
 
-const num = [];
+function sum2(...number: number[]): number {
+    let sum = 0;
+    for (let num of number) {
+        sum += num;
+    }
+    return sum;
+}
 
-function sum2(num: number) {}
+console.log(sum2(1, 2, 3, 4, 10));
