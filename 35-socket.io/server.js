@@ -63,6 +63,17 @@ io.on('connection', (socket) => {
         delete nickObjs[socket.id];
         updateList();
     });
+
+    // [실습4] 채팅창 전송 Step1
+    socket.on('send', (msg) => {
+        if (msg.receiver === 'all') {
+            console.log('전체보내기 : ', msg);
+            io.emit('newMessage', msg);
+        } else {
+            console.log('귓속말 : ', msg.receiver, msg);
+            io.to(msg.receiver).emit('dm', msg);
+        }
+    });
 });
 
 server.listen(PORT, () => {
